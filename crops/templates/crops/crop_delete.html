@@ -1,0 +1,12 @@
+<!-- crops/crop_delete.html -->
+{% extends 'crops/base.html' %}
+
+{% block content %}
+  <h2>Confirm Deletion</h2>
+  <p>Are you sure you want to delete {{ crop.name }}?</p>
+  <form method="post" action="{% url 'crop_delete' crop.id %}">
+    {% csrf_token %}
+    <button type="submit">Yes, delete</button>
+    <a href="{% url 'crop_detail' crop.id %}">Cancel</a>
+  </form>
+{% endblock %}

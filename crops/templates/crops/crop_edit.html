@@ -1,0 +1,11 @@
+<!-- crops/crop_edit.html -->
+{% extends 'crops/base.html' %}
+
+{% block content %}
+  <h2>Edit {{ crop.name }}</h2>
+  <form method="post" action="{% url 'crop_edit' crop.id %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update</button>
+  </form>
+{% endblock %}

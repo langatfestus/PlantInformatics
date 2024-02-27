@@ -1,0 +1,35 @@
+<!-- crops/crop_list.html -->
+<style>
+
+.display{
+
+ border: 1px solid ged;
+  }
+
+
+</style>
+
+
+{% extends 'crops/base.html' %}
+
+{% block content %}
+
+
+
+  <h2>All Crops</h2>
+
+    <div class="display">
+
+    {% for crop in all_crops_list %}
+
+<img src="{{ crop.image }}" alt="image">
+      Crop Name: {{ crop.name }} - <br> Description: {{ crop.description }}- <a href="{% url 'crop_detail' crop.id %}">Details</a>
+
+</div>
+
+    {% endfor %}
+
+
+
+
+{% endblock %}

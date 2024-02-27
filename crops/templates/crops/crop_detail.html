@@ -1,0 +1,12 @@
+<!-- crops/crop_detail.html -->
+{% extends 'crops/base.html' %}
+
+{% block content %}
+  <h2>{{ crop.name }} Details</h2>
+  <p>description: {{ crop.description }}</p>
+  <p>Plant Date: {{ crop.planting_season }}</p>
+  <p>Harvest Date: {{ crop.harvest_season }}</p>
+  <p>Maturity Period: {{ crop.maturity_period }}</p>
+  <a href="{% url 'crop_edit' crop.id %}">Edit</a> |
+  <a href="{% url 'crop_delete' crop.id %}">Delete</a>
+{% endblock %}
